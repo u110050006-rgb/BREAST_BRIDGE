@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BRIDGE - Message Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #FFF5F7; font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; }
+        .sidebar-item:hover { background-color: white; border-radius: 12px; transform: translateX(5px); transition: all 0.2s; }
+        .active-item { background: white; border-radius: 12px; border-right: 5px solid #C2185B; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+        .nav-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            border-width: 2px;
+            border-color: #F3F4F6;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        @media (min-width: 1024px) {
+            .nav-card { padding: 2rem; border-radius: 2rem; }
+        }
+        .nav-card:hover {
+            border-color: #F9A8D4;
+            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="flex flex-col lg:flex-row min-h-screen">
+
+    <aside class="w-full lg:w-80 h-auto lg:h-screen lg:sticky lg:top-0 border-b lg:border-b-0 lg:border-r border-pink-100 p-6 flex flex-col bg-[#FFF5F7]">
+        <div class="mb-6 lg:mb-10 px-2 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl lg:text-3xl font-black text-[#D81B60]">BRIDGE</h1>
+                <p class="text-gray-500 text-xs lg:text-sm tracking-widest font-bold uppercase">Message Deck</p>
+            </div>
+            <i class="fas fa-bars text-[#D81B60] lg:hidden"></i>
+        </div>
+
+        <nav class="hidden lg:block flex-grow overflow-y-auto space-y-2 pr-2">
+            <div class="p-4 active-item cursor-pointer">
+                <p class="text-[10px] text-pink-600 font-black uppercase mb-1">Section 00</p>
+                <div class="flex justify-between items-center text-[#D81B60] font-bold">
+                    <span>我的健康狀態小整理</span>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                </div>
+            </div>
+            <div class="p-4 sidebar-item cursor-pointer group"><span class="text-gray-700 font-bold group-hover:text-[#D81B60]">1. 🌙 最近睡得好不好</span></div>
+            <div class="p-4 sidebar-item cursor-pointer group"><span class="text-gray-700 font-bold group-hover:text-[#D81B60]">2. 🔋 身體累不累</span></div>
+            <div class="p-4 sidebar-item cursor-pointer group"><span class="text-gray-700 font-bold group-hover:text-[#D81B60]">3. 🧡 最近的心情感受</span></div>
+            <div class="p-4 sidebar-item cursor-pointer group"><span class="text-gray-700 font-bold group-hover:text-[#D81B60]">4. 💢 身體會不會痛</span></div>
+            <div class="p-4 sidebar-item cursor-pointer group"><span class="text-gray-700 font-bold group-hover:text-[#D81B60]">5. 🌡 身體忽冷忽熱的情形</span></div>
+            <div class="p-4 sidebar-item cursor-pointer group"><span class="text-gray-700 font-bold group-hover:text-[#D81B60]">6. 🍽 平常吃得怎麼樣</span></div>
+            <div class="p-4 sidebar-item cursor-pointer group"><span class="text-gray-700 font-bold group-hover:text-[#D81B60]">7. 🌿 中醫看我的身體狀態</span></div>
+        </nav>
+    </aside>
+
+    <main class="flex-grow p-6 lg:p-12">
+        <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 lg:mb-12 space-y-4 sm:space-y-0">
+            <div>
+                <span class="text-pink-600 font-bold text-xs lg:text-sm italic">The Right Care at the Right Time.</span>
+            </div>
+            
+            <div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-end">
+                <div class="flex items-center space-x-3">
+                    <div class="text-right">
+                        <span class="text-gray-800 font-black block text-sm lg:text-base">高雄長庚醫院</span>
+                        <span class="text-[#D81B60] text-[10px] font-bold uppercase">BC Center</span>
+                    </div>
+                    <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-xl border-2 border-pink-300 shadow-lg overflow-hidden bg-white">
+                        <img src="BC_PINK.jpg" alt="Logo" class="w-full h-full object-contain p-1">
+                    </div>
+                </div>
+                <button class="bg-white border-2 border-gray-100 px-3 py-1.5 rounded-lg shadow-sm text-xs font-bold text-gray-700">English</button>
+            </div>
+        </header>
+
+        <div class="bg-white rounded-[1.5rem] lg:rounded-[2.5rem] p-6 lg:p-12 shadow-xl shadow-pink-100/50 border border-white relative overflow-hidden">
+            <div class="flex items-center mb-6 lg:mb-8">
+                <div class="bg-[#D81B60] text-white w-10 h-10 lg:w-12 lg:h-12 rounded-xl lg:rounded-2xl flex items-center justify-center mr-4 shadow-lg shadow-pink-200">
+                    <i class="fas fa-notes-medical"></i>
+                </div>
+                <h3 class="text-xl lg:text-2xl font-black text-gray-800 tracking-tight">照護計畫核心摘要</h3>
+            </div>
+            
+            <p class="text-gray-600 text-sm lg:text-lg leading-relaxed mb-8 lg:mb-12 font-medium">
+                這是一份整理後的照護重點。我們將乳癌對生活的影響、可能出現的困擾，以及可提供的支援，完整整理在此。
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
+                <div class="p-6 lg:p-8 rounded-[1.5rem] lg:rounded-[2rem] bg-pink-50/50 border-2 border-pink-100 shadow-sm">
+                    <div class="flex items-center mb-2 text-[#D81B60] font-black"><i class="fas fa-bullseye mr-2"></i> 願景</div>
+                    <p class="text-gray-800 font-bold text-sm lg:text-base">陪您整理身體與心裡的感受。</p>
+                </div>
+                <div class="p-6 lg:p-8 rounded-[1.5rem] lg:rounded-[2rem] bg-orange-50/50 border-2 border-orange-100 shadow-sm">
+                    <div class="flex items-center mb-2 text-orange-700 font-black"><i class="fas fa-exclamation-triangle mr-2"></i> 問題</div>
+                    <p class="text-gray-800 font-bold text-sm lg:text-base">感覺不舒服卻不知從何說起。</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="mt-8 lg:mt-12 mb-4 lg:mb-6 font-black text-gray-800 text-lg lg:text-xl tracking-tight">快速導覽</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            <div class="nav-card group">
+                <p class="text-[10px] font-black text-pink-400 mb-1">PART 1</p>
+                <p class="font-black text-gray-800 text-sm lg:text-base">認識乳癌</p>
+            </div>
+            <div class="nav-card group">
+                <p class="text-[10px] font-black text-pink-400 mb-1">PART 2</p>
+                <p class="font-black text-gray-800 text-sm lg:text-base">我的治療</p>
+            </div>
+            <div class="nav-card group">
+                <p class="text-[10px] font-black text-pink-400 mb-1">PART 3</p>
+                <p class="font-black text-gray-800 text-sm lg:text-base">可能帶來的改變</p>
+            </div>
+            <div class="nav-card group">
+                <p class="text-[10px] font-black text-pink-400 mb-1">PART 4</p>
+                <p class="font-black text-gray-800 text-sm lg:text-base">身心生活照顧</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
